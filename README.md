@@ -1,4 +1,4 @@
-# # Photo portfolio
+# Photo portfolio
 
 ![Desktop Demo](https://res.cloudinary.com/drtxn8d5t/image/upload/v1609721113/photo-portfolio/display-images/mockup_aso6tx.png "Desktop Demo")
 

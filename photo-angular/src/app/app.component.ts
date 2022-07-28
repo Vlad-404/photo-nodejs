@@ -8,3 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'photo-angular';
 }
+
+console.log('Script file loaded');

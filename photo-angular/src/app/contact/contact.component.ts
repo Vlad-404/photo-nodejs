@@ -6,7 +6,9 @@ import { Component } from '@angular/core'
 })
 
 export class ContactComponent {
+    newMessage = '';
+
     onCreateMessage() {
-        alert('Thank you for your message. I will be in contact with you shortly.')
+        console.log('User\'s message: ', this.newMessage)
     }
 }

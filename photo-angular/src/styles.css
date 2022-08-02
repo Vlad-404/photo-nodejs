@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat&family=Open+Sans:wght@300&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Montserrat&family=Open+Sans:wght@300&display=swap');
 
 .nav-bg {
     background-color: #5F5F5F90;
@@ -18,3 +19,18 @@
     color: white;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
 }
+
+/* Montserrat font */
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shadow-text {
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 640px) {
+    .mar-top {
+        margin-top: 1.5rem;
+    }
+  }

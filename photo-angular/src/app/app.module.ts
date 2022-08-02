@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { NavDesktopComponent } from './navbar/desktop/nav-desktop.component'
 import { NavMobileComponent } from './navbar/mobile/nav-mobile.component'
 import { TitleComponent } from './title/title.component'
+import { ContactComponent } from './contact/contact.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavDesktopComponent,
     NavMobileComponent,
-    TitleComponent
+    TitleComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

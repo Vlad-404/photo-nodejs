@@ -6,5 +6,7 @@ import { Component } from '@angular/core'
 })
 
 export class ContactComponent {
-
+    onCreateMessage() {
+        alert('Thank you for your message. I will be in contact with you shortly.')
+    }
 }

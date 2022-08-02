@@ -13,7 +13,7 @@
             <label for="contact-message" class="montserrat md:text-right mt-8 mb-2">Message:</label>
             <textarea class="md:text-right rounded py-2 px-4 border border-gray-500" id="contact-message" name="contact-message" rows ="3" placeholder="Type in your message here..." required></textarea>
 
-            <input type="submit" value="Send" class="montserrat bg-gray-500 text-white rounded w-full md:w-1/4 mt-8 self-end py-2 px-4">
+            <input (click)="onCreateMessage()" type="submit" value="Send" class="montserrat bg-gray-500 text-white rounded w-full md:w-1/4 mt-8 self-end py-2 px-4">
         </form>
     </div>
 </div>

@@ -3,3 +3,10 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
+
+/* MAKES MOBILE NAVBAR FIXED */
+.fixed-nav {
+    position: fixed;
+    left: 5vw;
+    top: 10vh;
+}

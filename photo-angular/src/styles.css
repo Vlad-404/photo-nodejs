@@ -5,6 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
+.form-input-field {
+    @apply md:text-right text-xl osans rounded py-2 px-4 border border-gray-500;
+}
+
+.form-label-text {
+    @apply montserrat md:text-right mb-2;
+}
 
 .nav-bg {
     background-color: #5F5F5F90;
@@ -25,9 +32,18 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.osans {
+    font-family: 'Open Sans', sans-serif;
+}
+
 .shadow-text {
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.75);
 }
+
+/* Custom classes */
+/*
+create custom classes for form input and label elements
+*/
 
 @media only screen and (max-width: 640px) {
     .mar-top {

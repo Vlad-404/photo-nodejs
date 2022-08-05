@@ -1,5 +1,5 @@
 <main class="min-h-screen w-screen bg-cover bg-bottom md:bg-center bg-fixed galleries-bg">
-    <div class="w-full md:w-3/4 mx-auto py-16 px-5" *ngFor="let gallery of galleries">
+    <div class="w-full md:w-3/4 mx-auto py-16 px-5 text-2xl text-white shadow-text montserrat" *ngFor="let gallery of galleries">
         <p>{{ gallery.title }}</p>
         <a href="{{ gallery.imageUrl }}">
             <img src="{{ gallery.imageUrl }}" alt="Image of {{ gallery.imageUrl }}">

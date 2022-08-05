@@ -12,6 +12,7 @@ import { TitleComponent } from './title/title.component'
 import { ContactComponent } from './contact/contact.component'
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component'
 import { GalleryHomeComponent } from './gallery-home/gallery-home.component'
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { GalleryHomeComponent } from './gallery-home/gallery-home.component'
     TitleComponent,
     ContactComponent,
     HeroCarouselComponent,
-    GalleryHomeComponent
+    GalleryHomeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

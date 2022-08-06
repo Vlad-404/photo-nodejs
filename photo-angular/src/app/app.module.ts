@@ -15,7 +15,8 @@ import { GalleryHomeComponent } from './gallery-home/gallery-home.component'
 import { FooterComponent } from './footer/footer.component';
 import { GalleriesComponent } from './galleries/galleries.component';
 import { HomeComponent } from './home/home.component';
-import { ContactPageComponent } from './contact-page/contact-page.component'
+import { ContactPageComponent } from './contact-page/contact-page.component';
+import { NotFoundComponent } from './not-found/not-found.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ContactPageComponent } from './contact-page/contact-page.component'
     FooterComponent,
     GalleriesComponent,
     HomeComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

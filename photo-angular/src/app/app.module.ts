@@ -12,7 +12,10 @@ import { TitleComponent } from './title/title.component'
 import { ContactComponent } from './contact/contact.component'
 import { HeroCarouselComponent } from './hero-carousel/hero-carousel.component'
 import { GalleryHomeComponent } from './gallery-home/gallery-home.component'
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { GalleriesComponent } from './galleries/galleries.component';
+import { HomeComponent } from './home/home.component';
+import { ContactPageComponent } from './contact-page/contact-page.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { FooterComponent } from './footer/footer.component'
     ContactComponent,
     HeroCarouselComponent,
     GalleryHomeComponent,
-    FooterComponent
+    FooterComponent,
+    GalleriesComponent,
+    HomeComponent,
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,

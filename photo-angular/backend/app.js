@@ -1,8 +1,11 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use('/api/contact', (req, res, next) => {
+app.use(bodyParser.json());
+
+app.get('/api/contact', (req, res, next) => {
     const contacts = [
         {
             id: 'fyaid86%70a',

@@ -1,9 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 
+const Galleries = require('./models/postGalleries');
+const dbName = 'photo_nodejs';
+
 app.use(bodyParser.json());
+
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
+    .then(() => {
+        (console.log('Connected to MongoDB!'))
+    })
+    .catch((err) => {
+        console.log('Connection failed! Please check the login data. Error: ', err)
+    });
 
 app.get('/api/contact', (req, res, next) => {
     const contacts = [
@@ -27,7 +39,30 @@ app.get('/api/contact', (req, res, next) => {
 });
 
 app.get('/api/galleries', (req, res, next) => {
-    const galleries = [
+    Galleries.find()
+        .then(images => {
+            res.status(200).json({
+                message: "Images fetched succesfully!",
+                images: images
+            })
+        })
+        .catch(err => console.log(err));
+
+    // const galleries = new Galleries({
+    //     title: req.body.title,
+    //     description: req.body.description,
+    //     category: req.body.category,
+    //     panorama: req.body.panorama,
+    //     color: req.body.color,
+    //     price: req.body.price,
+    //     rating: req.body.price,
+    //     imageUrl: req.body.imageUrl,
+    //     imageId: req.body.imageId,
+    //     notes: req.body.notes,
+    //     uploadedBy: req.body.uploadedBy
+    // });
+
+    const localGalleries = [
         {
             id: 'fyaid86%70a',
             title: 'Dusseldorf Waterfront',
@@ -86,9 +121,9 @@ app.get('/api/galleries', (req, res, next) => {
         }
         
     ]
-    res.status(200).json({
-        galleries: galleries
-    })
+    // res.status(200).json({
+    //     message: "Images fetched succesfully!"
+    // })
 });
 
 module.exports = app;

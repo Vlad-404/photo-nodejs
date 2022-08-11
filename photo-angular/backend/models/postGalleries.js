@@ -14,4 +14,4 @@ const galleriesSchema = mongoose.Schema({
     uploadedBy: String    
 })
 
-module.exports = mongoose.model('Image', postSchema, 'galleries')
+module.exports = mongoose.model('Image', galleriesSchema)

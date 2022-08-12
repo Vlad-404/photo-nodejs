@@ -8,7 +8,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://root:1611Ne0n@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
     .then((result) => {
         console.log('Connected to MongoDB!')
     })

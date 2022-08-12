@@ -4,11 +4,16 @@ const mongoose = require('mongoose');
 
 const app = express();
 
+// environmental variables
+require('dotenv').config()
+const DB_USER = process.env.MONGO_USER
+const DB_PASSWORD = process.env.MONGO_PASSWORD
+
 // const imageSchema = require('./models/postGalleries');
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://<USERNAME>:<PASSWORD>@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority`)
     .then((result) => {
         console.log('Connected to MongoDB!')
     })

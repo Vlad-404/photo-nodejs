@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const galleriesSchema = mongoose.Schema({
+const Schema = mongoose.Schema;
+
+const galleriesSchema = new Schema({
     title: {type: String, required: true },
     description: String,
     category: {type: String, required: true },
@@ -14,4 +16,4 @@ const galleriesSchema = mongoose.Schema({
     uploadedBy: String    
 })
 
-module.exports = mongoose.model('Image', galleriesSchema)
+module.exports = mongoose.model('imageSchema', galleriesSchema)

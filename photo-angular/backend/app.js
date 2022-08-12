@@ -4,18 +4,31 @@ const mongoose = require('mongoose');
 
 const app = express();
 
-const Galleries = require('./models/postGalleries');
-const dbName = 'photo_nodejs';
+// const imageSchema = require('./models/postGalleries');
 
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://<username>:<password>@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
-    .then(() => {
-        (console.log('Connected to MongoDB!'))
+mongoose.connect('mongodb+srv://root:1611Ne0n@cluster0.u4zer.mongodb.net/photo_nodejs?retryWrites=true&w=majority')
+    .then((result) => {
+        console.log('Connected to MongoDB!')
     })
     .catch((err) => {
         console.log('Connection failed! Please check the login data. Error: ', err)
     });
+
+const imageSchema = new mongoose.Schema({
+        title: {type: String, required: true },
+        description: String,
+        category: {type: String, required: true },
+        panorama: {type: Boolean, default: false },
+        color: {type: Boolean, default: true },
+        price: {type: Number, required: true },
+        rating: Number,
+        imageUrl: {type: String, required: true },
+        imageId: {type: String, required: true },
+        notes: { type: String, default: 'Notes not visible to public.' },
+        uploadedBy: String    
+    })
 
 app.get('/api/contact', (req, res, next) => {
     const contacts = [
@@ -39,28 +52,25 @@ app.get('/api/contact', (req, res, next) => {
 });
 
 app.get('/api/galleries', (req, res, next) => {
-    Galleries.find()
+    // set the Schema and pull from galleries collection
+    mongoose.model('images', imageSchema, 'galleries');
+    // store them in a variable
+    let images = mongoose.model('images');
+
+    // display info about images
+    images.find()
         .then(images => {
             res.status(200).json({
                 message: "Images fetched succesfully!",
                 images: images
             })
         })
-        .catch(err => console.log(err));
-
-    // const galleries = new Galleries({
-    //     title: req.body.title,
-    //     description: req.body.description,
-    //     category: req.body.category,
-    //     panorama: req.body.panorama,
-    //     color: req.body.color,
-    //     price: req.body.price,
-    //     rating: req.body.price,
-    //     imageUrl: req.body.imageUrl,
-    //     imageId: req.body.imageId,
-    //     notes: req.body.notes,
-    //     uploadedBy: req.body.uploadedBy
-    // });
+        .catch(err => {
+            console.log('Error fetching images: ', err)
+            res.status(200).json({
+                message: "Error fetching images!"
+            })
+        });
 
     const localGalleries = [
         {
@@ -121,9 +131,6 @@ app.get('/api/galleries', (req, res, next) => {
         }
         
     ]
-    // res.status(200).json({
-    //     message: "Images fetched succesfully!"
-    // })
 });
 
 module.exports = app;
